@@ -1,0 +1,10 @@
+E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\ImageObjectify.exe.config
+E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\ImageObjectify.exe
+E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\ImageObjectify.pdb
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csprojAssemblyReference.cache
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.Form1.resources
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.Properties.Resources.resources
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csproj.GenerateResource.cache
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csproj.CoreCompileInputs.cache
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.exe
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.pdb
