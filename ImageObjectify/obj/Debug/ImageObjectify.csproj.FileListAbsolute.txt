@@ -8,3 +8,8 @@ E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csproj
 E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csproj.CoreCompileInputs.cache
 E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.exe
 E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.pdb
+E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\MetadataExtractor.dll
+E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\XmpCore.dll
+E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\MetadataExtractor.xml
+E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\XmpCore.xml
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csproj.CopyComplete

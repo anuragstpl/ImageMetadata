@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MetadataExtractor;
+using MetadataExtractor.Formats.Exif;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +20,7 @@ namespace ImageObjectify
             InitializeComponent();
         }
 
-        
+
 
         public void EqualizeHistogram()
         {
@@ -66,9 +68,53 @@ namespace ImageObjectify
                 OriginalImage.Image = new Bitmap(openFileDialog1.FileName);
                 // image file path  
                 label2.Text = Path.GetFileName(openFileDialog1.FileName);
+                label3.Text = (Convert.ToDecimal(new FileInfo(openFileDialog1.FileName).Length) / 1024 / 1024).ToString("N3") + " MB";
+                label5.Text = new FileInfo(openFileDialog1.FileName).Extension;
+                label7.Text = new FileInfo(openFileDialog1.FileName).LastWriteTime.ToString();
+                label9.Text = new FileInfo(openFileDialog1.FileName).CreationTime.ToString();
+                label11.Text = new FileInfo(openFileDialog1.FileName).LastAccessTime.ToString();
+                label13.Text = new FileInfo(openFileDialog1.FileName).IsReadOnly.ToString();
                 textBox1.Text = openFileDialog1.FileName;
                 EqualizeHistogram();
 
+                var gps = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName)
+                             .OfType<GpsDirectory>()
+                             .FirstOrDefault();
+
+                var tagDir = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName);
+
+
+                var location = gps.GetGeoLocation();
+                IReadOnlyList<Tag> lstTags = gps.Tags;
+                int rowNum = 0, rowNum1 = 0, rowNum2 = 0, rowNum3 = 0;
+                foreach (Tag tag in lstTags)
+                {
+                    tableLayoutPanel1.Controls.Add(new Label { Text = tag.Name }, 0, rowNum);
+                    tableLayoutPanel1.Controls.Add(new Label { Text = tag.Description }, 1, rowNum);
+                    rowNum++;
+                }
+
+                //tagDir[2].Tags
+                foreach (Tag tag in tagDir[2].Tags)
+                {
+                    tableLayoutPanel2.Controls.Add(new Label { Text = tag.Name }, 0, rowNum1);
+                    tableLayoutPanel2.Controls.Add(new Label { Text = tag.Description }, 1, rowNum1);
+                    rowNum1++;
+                }
+
+                foreach (Tag tag in tagDir[0].Tags)
+                {
+                    tableLayoutPanel3.Controls.Add(new Label { Text = tag.Name }, 0, rowNum2);
+                    tableLayoutPanel3.Controls.Add(new Label { Text = tag.Description }, 1, rowNum2);
+                    rowNum2++;
+                }
+
+                foreach (Tag tag in tagDir[1].Tags)
+                {
+                    tableLayoutPanel4.Controls.Add(new Label { Text = tag.Name }, 0, rowNum3);
+                    tableLayoutPanel4.Controls.Add(new Label { Text = tag.Description }, 1, rowNum3);
+                    rowNum3++;
+                }
             }
         }
 
@@ -123,6 +169,26 @@ namespace ImageObjectify
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
