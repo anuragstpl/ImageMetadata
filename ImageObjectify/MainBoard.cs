@@ -29,13 +29,15 @@ namespace ImageObjectify
                 {
                     tableLayoutPanel1.Controls.Add(new Button { Text = item.Name, Width = 200 }, columnIndex, 0);
                     IReadOnlyList<Tag> lstTags = item.Tags;
-                    Panel groupBox = new Panel();
+                    GroupBox groupBox = new GroupBox();
                     groupBox.Text = item.Name;
                     groupBox.AutoSize = true;
-                    groupBox.MaximumSize = new Size(600, 600);
-                    groupBox.AutoScroll = true;
+                    groupBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                    groupBox.Height = 850;
+                    groupBox.MaximumSize = new Size(900, 900);
                     TableLayoutPanel flowLayoutPanel = new TableLayoutPanel();
-                    flowLayoutPanel.Width = 600;
+                    flowLayoutPanel.Width = 900;
+                    flowLayoutPanel.AutoSize = true;
                     foreach (Tag tagItem in lstTags)
                     {
                         flowLayoutPanel.Controls.Add(new Label { Text = tagItem.Name });
@@ -43,7 +45,7 @@ namespace ImageObjectify
                         groupBox.Controls.Add(flowLayoutPanel);
                         rowIndex++;
                     }
-                    flowLayoutPanel1.Controls.Add(groupBox);
+                    tableLayoutPanel2.Controls.Add(groupBox);
                     columnIndex++;
                 }
             }
