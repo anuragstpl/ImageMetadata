@@ -86,7 +86,7 @@ namespace ImageObjectify
 
                 var location = gps.GetGeoLocation();
                 IReadOnlyList<Tag> lstTags = gps.Tags;
-                int rowNum = 0, rowNum1 = 0, rowNum2 = 0, rowNum3 = 0;
+                int rowNum = 0, rowNum1 = 0, rowNum2 = 0, rowNum3 = 0, rowNum4 = 0,rowNum5=0, rowNum6 = 0, rowNum7 = 0;
                 foreach (Tag tag in lstTags)
                 {
                     tableLayoutPanel1.Controls.Add(new Label { Text = tag.Name }, 0, rowNum);
@@ -114,6 +114,36 @@ namespace ImageObjectify
                     tableLayoutPanel4.Controls.Add(new Label { Text = tag.Name }, 0, rowNum3);
                     tableLayoutPanel4.Controls.Add(new Label { Text = tag.Description }, 1, rowNum3);
                     rowNum3++;
+                }
+
+                foreach (Tag tag in tagDir[4].Tags)
+                {
+                    if (rowNum4 < 14)
+                    {
+                        tableLayoutPanel5.Controls.Add(new Label { Text = tag.Name }, 0, rowNum4);
+                        tableLayoutPanel5.Controls.Add(new Label { Text = tag.Description }, 1, rowNum4);
+                    }
+                    else
+                    {
+                        tableLayoutPanel6.Controls.Add(new Label { Text = tag.Name }, 0, rowNum5);
+                        tableLayoutPanel6.Controls.Add(new Label { Text = tag.Description }, 1, rowNum5);
+                        rowNum5++;
+                    }
+                    rowNum4++;
+                }
+
+                foreach (Tag tag in tagDir[8].Tags)
+                {
+                    tableLayoutPanel7.Controls.Add(new Label { Text = tag.Name }, 0, rowNum6);
+                    tableLayoutPanel7.Controls.Add(new Label { Text = tag.Description }, 1, rowNum6);
+                    rowNum6++;
+                }
+
+                foreach (Tag tag in tagDir[6].Tags)
+                {
+                    tableLayoutPanel8.Controls.Add(new Label { Text = tag.Name }, 0, rowNum7);
+                    tableLayoutPanel8.Controls.Add(new Label { Text = tag.Description }, 1, rowNum7);
+                    rowNum7++;
                 }
             }
         }
@@ -189,6 +219,11 @@ namespace ImageObjectify
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
         {
 
         }

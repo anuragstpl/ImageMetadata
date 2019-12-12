@@ -13,3 +13,4 @@ E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\XmpCore.dll
 E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\MetadataExtractor.xml
 E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\XmpCore.xml
 E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csproj.CopyComplete
+E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.MainBoard.resources
