@@ -60,6 +60,18 @@ namespace ImageObjectify
 
         }
 
+        public void ClearTabs()
+        {
+            int tabCounter = tabControl1.TabPages.Count;
+            for (int i = 1; i < tabCounter; i++)
+            {
+                if (tabControl1.TabPages.Count != 1)
+                {
+                    tabControl1.TabPages.RemoveAt(1);
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -76,75 +88,102 @@ namespace ImageObjectify
                 label13.Text = new FileInfo(openFileDialog1.FileName).IsReadOnly.ToString();
                 textBox1.Text = openFileDialog1.FileName;
                 EqualizeHistogram();
-
-                var gps = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName)
-                             .OfType<GpsDirectory>()
-                             .FirstOrDefault();
-
-                var tagDir = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName);
-
-
-                var location = gps.GetGeoLocation();
-                IReadOnlyList<Tag> lstTags = gps.Tags;
-                int rowNum = 0, rowNum1 = 0, rowNum2 = 0, rowNum3 = 0, rowNum4 = 0,rowNum5=0, rowNum6 = 0, rowNum7 = 0;
-                foreach (Tag tag in lstTags)
+                ClearTabs();
+                int rowIndex = 0;
+                IReadOnlyList<MetadataExtractor.Directory> tagDir = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName);
+                foreach (MetadataExtractor.Directory item in tagDir)
                 {
-                    tableLayoutPanel1.Controls.Add(new Label { Text = tag.Name }, 0, rowNum);
-                    tableLayoutPanel1.Controls.Add(new Label { Text = tag.Description }, 1, rowNum);
-                    rowNum++;
-                }
-
-                //tagDir[2].Tags
-                foreach (Tag tag in tagDir[2].Tags)
-                {
-                    tableLayoutPanel2.Controls.Add(new Label { Text = tag.Name }, 0, rowNum1);
-                    tableLayoutPanel2.Controls.Add(new Label { Text = tag.Description }, 1, rowNum1);
-                    rowNum1++;
-                }
-
-                foreach (Tag tag in tagDir[0].Tags)
-                {
-                    tableLayoutPanel3.Controls.Add(new Label { Text = tag.Name }, 0, rowNum2);
-                    tableLayoutPanel3.Controls.Add(new Label { Text = tag.Description }, 1, rowNum2);
-                    rowNum2++;
-                }
-
-                foreach (Tag tag in tagDir[1].Tags)
-                {
-                    tableLayoutPanel4.Controls.Add(new Label { Text = tag.Name }, 0, rowNum3);
-                    tableLayoutPanel4.Controls.Add(new Label { Text = tag.Description }, 1, rowNum3);
-                    rowNum3++;
-                }
-
-                foreach (Tag tag in tagDir[4].Tags)
-                {
-                    if (rowNum4 < 14)
+                    if (item.Name != "File")
                     {
-                        tableLayoutPanel5.Controls.Add(new Label { Text = tag.Name }, 0, rowNum4);
-                        tableLayoutPanel5.Controls.Add(new Label { Text = tag.Description }, 1, rowNum4);
+                        TabPage tabPage = new TabPage(item.Name);
+                        tabPage.AutoScroll = true;
+                        tabPage.BackColor = Color.Transparent;
+                        tabControl1.TabPages.Add(tabPage);
+                        IReadOnlyList<Tag> lstTags = item.Tags;
+                        TableLayoutPanel flowLayoutPanel = new TableLayoutPanel();
+                        flowLayoutPanel.Width = 700;
+                        flowLayoutPanel.Height = 600;
+                        flowLayoutPanel.Margin = new Padding(0, 200, 0, 0);
+                        flowLayoutPanel.AutoSize = false;
+                        //flowLayoutPanel.AutoScroll = true;
+                        foreach (Tag tagItem in lstTags)
+                        {
+                            flowLayoutPanel.Controls.Add(new Label { Text = tagItem.Name }, 0, rowIndex);
+                            flowLayoutPanel.Controls.Add(new Label { Text = tagItem.Description }, 1, rowIndex);
+                            rowIndex++;
+                        }
+                        tabPage.Controls.Add(flowLayoutPanel);
                     }
-                    else
-                    {
-                        tableLayoutPanel6.Controls.Add(new Label { Text = tag.Name }, 0, rowNum5);
-                        tableLayoutPanel6.Controls.Add(new Label { Text = tag.Description }, 1, rowNum5);
-                        rowNum5++;
-                    }
-                    rowNum4++;
                 }
 
-                foreach (Tag tag in tagDir[8].Tags)
-                {
-                    tableLayoutPanel7.Controls.Add(new Label { Text = tag.Name }, 0, rowNum6);
-                    tableLayoutPanel7.Controls.Add(new Label { Text = tag.Description }, 1, rowNum6);
-                    rowNum6++;
-                }
+                //var gps = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName)
+                //             .OfType<GpsDirectory>()
+                //             .FirstOrDefault();
 
-                foreach (Tag tag in tagDir[6].Tags)
-                {
-                    tableLayoutPanel8.Controls.Add(new Label { Text = tag.Name }, 0, rowNum7);
-                    tableLayoutPanel8.Controls.Add(new Label { Text = tag.Description }, 1, rowNum7);
-                    rowNum7++;
-                }
+                //var tagDir = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName);
+
+
+                //var location = gps.GetGeoLocation();
+                //IReadOnlyList<Tag> lstTags = gps.Tags;
+                //int rowNum = 0, rowNum1 = 0, rowNum2 = 0, rowNum3 = 0, rowNum4 = 0,rowNum5=0, rowNum6 = 0, rowNum7 = 0;
+                //foreach (Tag tag in lstTags)
+                //{
+                //    tableLayoutPanel1.Controls.Add(new Label { Text = tag.Name }, 0, rowNum);
+                //    tableLayoutPanel1.Controls.Add(new Label { Text = tag.Description }, 1, rowNum);
+                //    rowNum++;
+                //}
+
+                ////tagDir[2].Tags
+                //foreach (Tag tag in tagDir[2].Tags)
+                //{
+                //    tableLayoutPanel2.Controls.Add(new Label { Text = tag.Name }, 0, rowNum1);
+                //    tableLayoutPanel2.Controls.Add(new Label { Text = tag.Description }, 1, rowNum1);
+                //    rowNum1++;
+                //}
+
+                //foreach (Tag tag in tagDir[0].Tags)
+                //{
+                //    tableLayoutPanel3.Controls.Add(new Label { Text = tag.Name }, 0, rowNum2);
+                //    tableLayoutPanel3.Controls.Add(new Label { Text = tag.Description }, 1, rowNum2);
+                //    rowNum2++;
+                //}
+
+                //foreach (Tag tag in tagDir[1].Tags)
+                //{
+                //    tableLayoutPanel4.Controls.Add(new Label { Text = tag.Name }, 0, rowNum3);
+                //    tableLayoutPanel4.Controls.Add(new Label { Text = tag.Description }, 1, rowNum3);
+                //    rowNum3++;
+                //}
+
+                //foreach (Tag tag in tagDir[4].Tags)
+                //{
+                //    if (rowNum4 < 14)
+                //    {
+                //        tableLayoutPanel5.Controls.Add(new Label { Text = tag.Name }, 0, rowNum4);
+                //        tableLayoutPanel5.Controls.Add(new Label { Text = tag.Description }, 1, rowNum4);
+                //    }
+                //    else
+                //    {
+                //        tableLayoutPanel6.Controls.Add(new Label { Text = tag.Name }, 0, rowNum5);
+                //        tableLayoutPanel6.Controls.Add(new Label { Text = tag.Description }, 1, rowNum5);
+                //        rowNum5++;
+                //    }
+                //    rowNum4++;
+                //}
+
+                //foreach (Tag tag in tagDir[8].Tags)
+                //{
+                //    tableLayoutPanel7.Controls.Add(new Label { Text = tag.Name }, 0, rowNum6);
+                //    tableLayoutPanel7.Controls.Add(new Label { Text = tag.Description }, 1, rowNum6);
+                //    rowNum6++;
+                //}
+
+                //foreach (Tag tag in tagDir[6].Tags)
+                //{
+                //    tableLayoutPanel8.Controls.Add(new Label { Text = tag.Name }, 0, rowNum7);
+                //    tableLayoutPanel8.Controls.Add(new Label { Text = tag.Description }, 1, rowNum7);
+                //    rowNum7++;
+                //}
             }
         }
 

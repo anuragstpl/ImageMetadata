@@ -14,3 +14,22 @@ E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\MetadataExtractor.xml
 E:\Windows FunTime\ImageObjectify\ImageObjectify\bin\Debug\XmpCore.xml
 E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.csproj.CopyComplete
 E:\Windows FunTime\ImageObjectify\ImageObjectify\obj\Debug\ImageObjectify.MainBoard.resources
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\ImageObjectify.exe.config
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\ImageObjectify.exe
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\ImageObjectify.pdb
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\MetadataExtractor.xml
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\XmpCore.xml
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.csprojAssemblyReference.cache
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.Form1.resources
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.MainBoard.resources
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.Properties.Resources.resources
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.csproj.GenerateResource.cache
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.csproj.CopyComplete
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.exe
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.pdb
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\MetadataExtractor.dll
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\XmpCore.dll
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\ImageObjectify.exe.manifest
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\bin\Debug\ImageObjectify.application
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.exe.manifest
+E:\Student Jobs\DotNet\Image Metadata\ImageObjectify\obj\Debug\ImageObjectify.application

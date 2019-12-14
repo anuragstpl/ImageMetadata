@@ -25,27 +25,28 @@ namespace ImageObjectify
                 int columnIndex = 0;
                 int rowIndex = 0;
                 IReadOnlyList<Directory> tagDir = ImageMetadataReader.ReadMetadata(openFileDialog1.FileName);
+                tabControl1.TabPages.Clear();
                 foreach (Directory item in tagDir)
                 {
-                    tableLayoutPanel1.Controls.Add(new Button { Text = item.Name, Width = 200 }, columnIndex, 0);
+                    TabPage tabPage = new TabPage(item.Name);
+                    tabControl1.TabPages.Add(tabPage);
                     IReadOnlyList<Tag> lstTags = item.Tags;
-                    GroupBox groupBox = new GroupBox();
-                    groupBox.Text = item.Name;
-                    groupBox.AutoSize = true;
-                    groupBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                    groupBox.Height = 850;
-                    groupBox.MaximumSize = new Size(900, 900);
                     TableLayoutPanel flowLayoutPanel = new TableLayoutPanel();
                     flowLayoutPanel.Width = 900;
-                    flowLayoutPanel.AutoSize = true;
+                    flowLayoutPanel.Height = 600;
+                    flowLayoutPanel.Margin = new Padding(0, 200, 0, 0);
+                    flowLayoutPanel.AutoSize = false;
+                    flowLayoutPanel.AutoScroll = true;
                     foreach (Tag tagItem in lstTags)
                     {
-                        flowLayoutPanel.Controls.Add(new Label { Text = tagItem.Name });
-                        flowLayoutPanel.Controls.Add(new Label { Text = tagItem.Description });
-                        groupBox.Controls.Add(flowLayoutPanel);
+                        flowLayoutPanel.Controls.Add(new Label { Text = tagItem.Name }, 0, rowIndex);
+                        flowLayoutPanel.Controls.Add(new Label { Text = tagItem.Description }, 1, rowIndex);
+                        
                         rowIndex++;
                     }
-                    tableLayoutPanel2.Controls.Add(groupBox);
+                   
+                    tabPage.Controls.Add(flowLayoutPanel);
+                    //tabPage.Controls.Add(groupBox);
                     columnIndex++;
                 }
             }
@@ -65,7 +66,7 @@ namespace ImageObjectify
 
         private void MainBoard_Load(object sender, EventArgs e)
         {
-            GetCorrectionPadding(tableLayoutPanel1, 90);
+            //GetCorrectionPadding(tableLayoutPanel1, 90);
             //GetCorrectionPadding(tableLayoutPanel2, 450);
         }
     }

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ImageObjectify.exe" version="1.0.0.0" publicKeyToken="045b03cf8ce8c2aa" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ImageObjectify" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ImageObjectify.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ImageObjectify.exe" size="20416">
+      <assemblyIdentity name="ImageObjectify" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ME5YElSmcldhq76WxXuaTg5gnBhzBzEOlpcy+UDH0gQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MetadataExtractor.dll" size="492032">
+      <assemblyIdentity name="MetadataExtractor" version="2.2.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>En6S2/JrZV/9UpEWU+Fp3Iet3wwNcR22EPOvIo0tQU4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XmpCore.dll" size="144384">
+      <assemblyIdentity name="XmpCore" version="6.1.10.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>QWyxtJvyBveoaWqXYV3NY/6s3VSlNET49fVAJrDcf90=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ImageObjectify.exe.config" size="186">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1NgAxCSw4ibTXzWVy7D6Rw60Qih4Dn37KvGhG5Ora/s=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Anurag\AnuragPC" issuerKeyHash="c219bbb14525308d4c4580374f774337a9bb82c8" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>VdxHgTUd+MsfF5e4kgiTb8ppkjIlZSik+f8+ECfc/Xg=</DigestValue></Reference></SignedInfo><SignatureValue>O1TdMps1c8l375LsHnJ0GddGmGyyLPoI3QKPViAQz9TVHKj5vfmd4mDF+kvMhQMnZ+11YxM4IJpUHfES5NzrFVxq3vTT9zRpkbBTAv17gNIIc4oE/sbNZMM/Ekv4cAAuUJvq5aXuN4Vi9D2XANDstgv0UfxM6NhrX0f4gNkuEB4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3JsNWXnxhJ+K8Mz0RneGyamTAuBNVS9h/VAomDfXSZFHr4TJSGKsqV6XX6SCvfC0SCbuIaG7fEfIwH+IWkB09yNwz1q1jXJDBHXNtUoctjQMjRhsQOqKqCgnw1vElD6Dq1iSBYajBfCwyZS27PxSr9U6ybOzRX9HCUiLzr1nPRs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="78fddc27103efff9a4286525329269ca6f930892b897171fcbf81d358147dc55" Description="" Url=""><as:assemblyIdentity name="ImageObjectify.exe" version="1.0.0.0" publicKeyToken="045b03cf8ce8c2aa" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Anurag\AnuragPC</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>wAjR2jdHPsNXIp2GCzAI97Uste024wZKmsn+ta50A2M=</DigestValue></Reference></SignedInfo><SignatureValue>Xuojv0jA1YRkjNvvOnkSW3buK0+hZ7NqXFVe/gImZzWtEImja7ykByvg+jdaM28fNC9yICOo05j6KAcyqJ+Zdt4kt5oCUqZhFwDQYw+WON9GJ+Wh0992NwXxMXzhh2Wc/sPy411obTynF12Qt+VkOb9uA83KEquofbbqYegesaU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3JsNWXnxhJ+K8Mz0RneGyamTAuBNVS9h/VAomDfXSZFHr4TJSGKsqV6XX6SCvfC0SCbuIaG7fEfIwH+IWkB09yNwz1q1jXJDBHXNtUoctjQMjRhsQOqKqCgnw1vElD6Dq1iSBYajBfCwyZS27PxSr9U6ybOzRX9HCUiLzr1nPRs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQJaVXSfYV7bBC6U8RkXdmFjANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4AQQBuAHUAcgBhAGcAXABBAG4AdQByAGEAZwBQAEMwHhcNMTkxMjE0MTcwODI5WhcNMjAxMjEzMjMwODI5WjApMScwJQYDVQQDHh4AQQBuAHUAcgBhAGcAXABBAG4AdQByAGEAZwBQAEMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANybDVl58YSfivDM9EZ3hsmpkwLgTVUvYf1QKJg310mRR6+EyUhirKlel1+kgr3wtEgm7iGhu3xHyMB/iFpAdPcjcM9atY1yQwR1zbVKHLY0DI0YbEDqiqgoJ8NbxJQ+g6tYkgWGowXwsMmUtuz8Uq/VOsmzs0V/RwlIi869Zz0bAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAX5lIOOUC+u8OWk+OFKEwW/EGSy8rcidcZDMctCkklOHK2uYUdrKGRAcd6pwVN3AH8r4H1KrdhQvsHg/T69TXHYZVp99dtGEvEjHfIw/pe74CrRT1iUGBI55GXQL3TS2JDw85nO9GXZ6ZVZ4jmX8U+98NzzuvsQ0Mlc1qTnt7a80=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
